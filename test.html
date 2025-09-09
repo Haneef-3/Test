@@ -1,38 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Embedded Service Deployment</title>
+<title>Page Title</title>
 </head>
 <body>
-  <h1>My Website with Embedded Service Deployment</h1>
-  <p>This is a sample page to test Salesforce Embedded Messaging.</p>
 
-  <!-- Embedded Service Deployment Script -->
-  <script type="text/javascript">
-    function initEmbeddedMessaging() {
-      try {
-        embeddedservice_bootstrap.settings.language = 'en_US'; // Example: 'en' or 'en-US'
+<script type='text/javascript'>
+	function initEmbeddedMessaging() {
+		try {
+			embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
 
-        embeddedservice_bootstrap.init(
-          '00D0E00000022q8',
-          'ARC_TR_Grundig_Messaging_for_InAppWebDeployment',
-          'https://argrp--test.sandbox.my.site.com/ESWARCTRGrundigMessagi1756657493068',
-          {
-            scrt2URL: 'https://argrp--test.sandbox.my.salesforce-scrt.com'
-          }
-        );
-      } catch (err) {
-        console.error('Error loading Embedded Messaging: ', err);
-      }
-    }
-  </script>
+			embeddedservice_bootstrap.init(
+				'00D0E00000022q8',
+				'TEST_DEPLOYMENT',
+				'https://argrp--test.sandbox.my.site.com/ESWTESTDEPLOYMENT1757429121219',
+				{
+					scrt2URL: 'https://argrp--test.sandbox.my.salesforce-scrt.com'
+				}
+			);
+		} catch (err) {
+			console.error('Error loading Embedded Messaging: ', err);
+		}
+	};
+</script>
+<script type='text/javascript' src='https://argrp--test.sandbox.my.site.com/ESWTESTDEPLOYMENT1757429121219/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
 
-  <script 
-    type="text/javascript" 
-    src="https://argrp--test.sandbox.my.site.com/ESWARCTRGrundigMessagi1756657493068/assets/js/bootstrap.min.js" 
-    onload="initEmbeddedMessaging()">
-  </script>
+
 </body>
 </html>
+
+
